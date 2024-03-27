@@ -5,7 +5,7 @@ import { ToggleThemeButton } from "@/ui/ToggleThemeButton";
 
 export const HeaderView = () => {
   return (
-    <header className="header w-full h-20 flex items-center px-6 justify-between">
+    <header className="header w-full h-20 flex items-center justify-between">
       <section className="lines-logo flex gap-1 items-end">
         <span className="lines-text text-4xl font-bold text-green-500">
           _lines
@@ -24,13 +24,21 @@ export const HeaderView = () => {
         <Link href="/">Paradas</Link>
       </section>
 
-      <section className="input-container w-80 flex items-center bg-slate-200 py-2 px-4 rounded-full">
+      <section
+        className="
+          input-container w-80 flex items-center bg-slate-200 py-2 px-4 rounded-full transition-colors duration-500
+          dark:bg-slate-700
+        "
+      >
         <input
           type="text"
           name="search"
           autoComplete="off"
           placeholder="Buscar uma linha"
-          className="search-input w-full bg-transparent appearance-none focus:outline-none"
+          className="
+            search-input w-full bg-transparent appearance-none 
+            focus:outline-none
+          "
         />
 
         <RiSearchLine className="w-5 h-5" />

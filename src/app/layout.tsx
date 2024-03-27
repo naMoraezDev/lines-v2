@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { ThemeProvider } from "@/contexts/theme";
 
 const roboto = Roboto({
   preload: true,
@@ -18,12 +19,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactElement;
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.className} bg-slate-100 text-slate-500`}>
-        {children}
+      <body className={`${roboto.className}`}>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
