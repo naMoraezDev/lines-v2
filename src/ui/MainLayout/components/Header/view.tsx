@@ -2,6 +2,7 @@ import Link from "next/link";
 import { IoIosBus } from "react-icons/io";
 import { RiSearchLine } from "react-icons/ri";
 import { ToggleThemeButton } from "@/ui/ToggleThemeButton";
+import { NavigationMenu } from "./components/NavigationMenu";
 
 export const HeaderView = () => {
   return (
@@ -13,16 +14,7 @@ export const HeaderView = () => {
         <IoIosBus className="bus-icon w-12 h-12" />
       </section>
 
-      <section className="menu flex gap-12">
-        <Link
-          href="/"
-          className="menu-item pb-2 border-b-4 border-green-400 rounded-sm"
-        >
-          Home
-        </Link>
-        <Link href="/">Linhas</Link>
-        <Link href="/">Paradas</Link>
-      </section>
+      <NavigationMenu />
 
       <section
         className="
