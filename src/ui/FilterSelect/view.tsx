@@ -16,11 +16,17 @@ export const FilterSelectView = () => {
             }`
           )
         }
-        className="bg-transparent border-[1px] border-green-500 rounded-lg p-2 text-slate-900 duration-500 focus:outline-none dark:bg-slate-100"
+        className="bg-transparent rounded-lg py-2 px-4 outline-none"
       >
-        <option value="todos">Todos</option>
-        <option value="onibus">Ônibus</option>
-        <option value="lotacao">Lotação</option>
+        <option value="todos" style={{ color: "black" }}>
+          Todos
+        </option>
+        <option value="onibus" style={{ color: "black" }}>
+          Ônibus
+        </option>
+        <option value="lotacao" style={{ color: "black" }}>
+          Lotação
+        </option>
       </select>
     </section>
   );
