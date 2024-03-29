@@ -9,9 +9,16 @@ export const FilterSelectView = () => {
       <span>Filtrar por :</span>
       <select
         name="filter"
-        onChange={(e) => router.push(`/linhas?filter=${e.target.value}`)}
+        onChange={(e) =>
+          router.push(
+            `/linhas${
+              e.target.value === "todos" ? "" : `?filter=${e.target.value}`
+            }`
+          )
+        }
         className="bg-transparent border-[1px] border-green-500 rounded-lg p-2 text-slate-900 duration-500 focus:outline-none dark:bg-slate-100"
       >
+        <option value="todos">Todos</option>
         <option value="onibus">Ônibus</option>
         <option value="lotacao">Lotação</option>
       </select>
