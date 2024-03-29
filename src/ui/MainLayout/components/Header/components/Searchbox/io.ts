@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { FormEvent, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const useSearchbox = () => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const searchParam = searchParams.get("search");
 
@@ -12,9 +13,17 @@ export const useSearchbox = () => {
     setSearch(value);
   };
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (search) {
+      router.push(`/linhas?search=${search}`);
+    }
+  };
+
   return {
     search,
-    searchParam,
+    handleSubmit,
     handleSearch,
   };
 };
