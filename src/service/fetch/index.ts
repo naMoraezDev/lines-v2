@@ -1,4 +1,4 @@
-const baseUrl = process.env.PRIVATE_API_BASE_URL as string;
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL as string;
 
 export async function fetchApi<Type = unknown>(
   input: RequestInfo | URL,

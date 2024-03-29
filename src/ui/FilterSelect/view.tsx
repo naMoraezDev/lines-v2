@@ -16,7 +16,7 @@ export const FilterSelectView = () => {
             }`
           )
         }
-        className="bg-transparent rounded-lg py-2 px-4 outline-none"
+        className="bg-transparent rounded-lg py-2 px-4 outline-none cursor-pointer"
       >
         <option value="todos" style={{ color: "black" }}>
           Todos

@@ -26,7 +26,10 @@ export const SearchboxView = () => {
           focus:outline-none
         "
       />
-      <button type="submit" className="rounded-full p-1 hover:bg-slate-300">
+      <button
+        type="submit"
+        className="rounded-full p-1 duration-300 hover:bg-slate-300 dark:hover:bg-slate-600"
+      >
         <RiSearchLine className="w-5 h-5" />
       </button>
     </form>
