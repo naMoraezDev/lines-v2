@@ -10,6 +10,7 @@ export const ArrowButtonView = ({
   if (variant === "previous") {
     return (
       <Link
+        scroll={false}
         href={`/linhas?page=${currentPage - 1}${
           filter ? `&filter=${filter}` : ""
         }`}
@@ -22,6 +23,7 @@ export const ArrowButtonView = ({
 
   return (
     <Link
+      scroll={false}
       href={`/linhas?page=${currentPage + 1}${
         filter ? `&filter=${filter}` : ""
       }`}

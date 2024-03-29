@@ -8,14 +8,15 @@ export const PaginationItemView = ({
 }: PaginationItemProps) => {
   return (
     <Link
+      scroll={false}
       href={`/linhas?page=${page}${filter ? `&filter=${filter}` : ""}`}
       className={`
         ${
           active
-            ? "bg-green-500 text-slate-50 rounded-xl hover:bg-green-600"
-            : "rounded-full hover:bg-slate-300"
+            ? "bg-green-500 text-slate-50 hover:bg-green-600"
+            : "hover:bg-slate-300"
         }
-        flex justify-center items-center w-8 h-8  duration-300
+        flex justify-center items-center w-8 h-8 rounded-full duration-300
       `}
     >
       {page}

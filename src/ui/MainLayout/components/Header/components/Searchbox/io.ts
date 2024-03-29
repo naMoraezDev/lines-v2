@@ -1,22 +1,20 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export const useSearchbox = () => {
-  const router = useRouter();
-  const [search, setSearch] = useState("");
+  const searchParams = useSearchParams();
+  const searchParam = searchParams.get("search");
+
+  const [search, setSearch] = useState(searchParam as string);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearch(value);
   };
 
-  const handleSearchSubmit = () => {
-    if (search) {
-      router.push(`/linhas?search=${search}`);
-    }
-  };
   return {
+    search,
+    searchParam,
     handleSearch,
-    handleSearchSubmit,
   };
 };

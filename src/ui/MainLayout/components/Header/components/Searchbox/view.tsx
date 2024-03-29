@@ -1,13 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchbox } from "./io";
 import { RiSearchLine } from "react-icons/ri";
 
 export const SearchboxView = () => {
-  const { handleSearch, handleSearchSubmit } = useSearchbox();
+  const { search, handleSearch, searchParam } = useSearchbox();
 
   return (
-    <form
+    <section
       className="
         w-80 flex items-center bg-slate-200 py-2 px-4 rounded-full transition-colors duration-500
         dark:bg-slate-700
@@ -16,6 +17,7 @@ export const SearchboxView = () => {
       <input
         type="text"
         name="search"
+        value={search}
         autoComplete="off"
         onChange={handleSearch}
         placeholder="Buscar uma linha"
@@ -24,13 +26,12 @@ export const SearchboxView = () => {
           focus:outline-none
         "
       />
-      <button
-        type="submit"
-        onSubmit={handleSearchSubmit}
+      <Link
+        href={`/linhas?search=${search || ""}`}
         className="rounded-full p-1 duration-300 hover:bg-slate-300"
       >
         <RiSearchLine className="w-5 h-5" />
-      </button>
-    </form>
+      </Link>
+    </section>
   );
 };
