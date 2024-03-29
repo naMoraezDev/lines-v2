@@ -40,7 +40,7 @@ const LinesPage = async ({
 
   return (
     <MainLayout>
-      <ul className="flex flex-col gap-4 w-full items-center py-10">
+      <ul className="flex flex-col gap-4 w-full items-center py-10 animate-fadeIn">
         {!search && (
           <section className="w-[70%] flex justify-end">
             <FilterSelect />

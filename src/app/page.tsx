@@ -6,7 +6,7 @@ import hero from "../../public/images/bus-stop.svg";
 const HomePage = () => {
   return (
     <MainLayout>
-      <main className="flex items-center w-full justify-center">
+      <main className="flex items-center w-full justify-center animate-fadeIn">
         <div className="flex flex-col gap-8">
           <h1 className="text-[48px] font-bold max-w-[450px]">
             Consulte <span className="text-green-500">itinerários</span>{" "}
