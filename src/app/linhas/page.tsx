@@ -2,6 +2,7 @@ import "./styles.css";
 import Link from "next/link";
 import { MainLayout } from "@/ui/MainLayout";
 import { TbMapSearch } from "react-icons/tb";
+import { Pagination } from "@/ui/Pagination";
 import { LinesService } from "@/service/lines";
 
 const LinesPage = async ({
@@ -17,8 +18,6 @@ const LinesPage = async ({
   ]);
 
   const lines = [...lotationLines, ...busLines];
-
-  const pages = Math.ceil(lines.length / 10);
 
   const currentLines = lines.slice((page - 1) * 10, page * 10);
 
@@ -52,16 +51,7 @@ const LinesPage = async ({
           </li>
         ))}
       </ul>
-
-      <span>
-        <Link href={`/linhas?page=${page - 1}`}>anterior</Link>
-      </span>
-      <span>
-        {page}/{pages}
-      </span>
-      <span>
-        <Link href={`/linhas?page=${page + 1}`}>próximo</Link>
-      </span>
+      <Pagination {...{ lines, currentPage: page }} />
     </MainLayout>
   );
 };
