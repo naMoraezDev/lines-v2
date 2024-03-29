@@ -5,10 +5,11 @@ import { ThemeProvider } from "@/contexts/theme";
 
 const roboto = Roboto({
   preload: true,
+  style: "normal",
   display: "swap",
   subsets: ["latin"],
-  weight: ["400", "700"],
-  fallback: ["Helvetica", "Arial", "sans-serif"],
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.className} overflow-x-hidden`}>
+      <body className={`${roboto.variable} font-roboto overflow-x-hidden`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
