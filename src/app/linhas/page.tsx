@@ -9,9 +9,14 @@ import { FilterSelect } from "@/ui/FilterSelect";
 const LinesPage = async ({
   searchParams,
 }: {
-  searchParams?: { page?: string; filter?: "onibus" | "lotacao" };
+  searchParams?: {
+    page?: string;
+    search?: string;
+    filter?: "onibus" | "lotacao";
+  };
 }) => {
   const filter = searchParams?.filter;
+  const search = searchParams?.search;
   const page = Number(searchParams?.page) || 1;
 
   const [busLines, lotationLines] = await Promise.all([
@@ -23,17 +28,24 @@ const LinesPage = async ({
     ? filter === "onibus"
       ? busLines
       : lotationLines
+    : search
+    ? [...busLines, ...lotationLines].filter(
+        (line) =>
+          line.nome.toLowerCase().includes(search.toLowerCase()) ||
+          line.codigo.toLowerCase().includes(search.toLowerCase())
+      )
     : [...lotationLines, ...busLines];
 
   const currentLines = lines.slice((page - 1) * 10, page * 10);
 
   return (
     <MainLayout>
-      <ul className="flex flex-col gap-4 w-full items-center mt-10">
-        <section className="w-[70%] flex justify-end">
-          <FilterSelect />
-        </section>
-
+      <ul className="flex flex-col gap-4 w-full items-center py-10">
+        {!search && (
+          <section className="w-[70%] flex justify-end">
+            <FilterSelect />
+          </section>
+        )}
         <li className="grid grid-cols-[20%_50%_30%] w-[70%] py-4 px-4 font-bold rounded-md">
           <span>Código</span>
           <span>Nome</span>
@@ -61,7 +73,7 @@ const LinesPage = async ({
           </li>
         ))}
       </ul>
-      <Pagination {...{ lines, filter, currentPage: page }} />
+      {!search && <Pagination {...{ lines, filter, currentPage: page }} />}
     </MainLayout>
   );
 };
