@@ -4,12 +4,14 @@ import { MainLayout } from "@/ui/MainLayout";
 import { TbMapSearch } from "react-icons/tb";
 import { Pagination } from "@/ui/Pagination";
 import { LinesService } from "@/service/lines";
+import { FilterSelect } from "@/ui/FilterSelect";
 
 const LinesPage = async ({
   searchParams,
 }: {
-  searchParams?: { page: string };
+  searchParams?: { page?: string; filter?: "onibus" | "lotacao" };
 }) => {
+  const filter = searchParams?.filter;
   const page = Number(searchParams?.page) || 1;
 
   const [busLines, lotationLines] = await Promise.all([
@@ -17,13 +19,21 @@ const LinesPage = async ({
     LinesService.getLines("l"),
   ]);
 
-  const lines = [...lotationLines, ...busLines];
+  const lines = filter
+    ? filter === "onibus"
+      ? busLines
+      : lotationLines
+    : [...lotationLines, ...busLines];
 
   const currentLines = lines.slice((page - 1) * 10, page * 10);
 
   return (
     <MainLayout>
       <ul className="flex flex-col gap-4 w-full items-center mt-10">
+        <section className="w-[70%] flex justify-end">
+          <FilterSelect />
+        </section>
+
         <li className="grid grid-cols-[20%_50%_30%] w-[70%] py-4 px-4 font-bold rounded-md">
           <span>Código</span>
           <span>Nome</span>
@@ -51,7 +61,7 @@ const LinesPage = async ({
           </li>
         ))}
       </ul>
-      <Pagination {...{ lines, currentPage: page }} />
+      <Pagination {...{ lines, filter, currentPage: page }} />
     </MainLayout>
   );
 };

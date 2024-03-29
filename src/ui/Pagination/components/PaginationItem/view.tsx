@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { PaginationItemProps } from "./types";
 
-export const PaginationItemView = ({ page, active }: PaginationItemProps) => {
+export const PaginationItemView = ({
+  page,
+  active,
+  filter,
+}: PaginationItemProps) => {
   return (
     <Link
-      href={`/linhas?page=${page}`}
+      href={`/linhas?page=${page}${filter ? `&filter=${filter}` : ""}`}
       className={`
         ${
           active
