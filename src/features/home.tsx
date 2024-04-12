@@ -15,7 +15,7 @@ export const Home = ({ mobile }: DefaultProps) => {
         <Link
           href="/linhas"
           className={`
-            ${mobile ? "w-full" : "w-1/3"}
+            ${mobile ? "w-full" : "w-2/3"}
             flex justify-center items-center w-2/3 bg-green-500 h-10 rounded-full text-slate-50 font-bold duration-300
             hover:bg-green-600
           `}

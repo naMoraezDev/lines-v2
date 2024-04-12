@@ -14,7 +14,7 @@ export const ArrowButtonView = ({
         href={`/linhas?page=${currentPage - 1}${
           filter ? `&filter=${filter}` : ""
         }`}
-        className="flex justify-center items-center w-8 h-8 rounded-full bg-slate-400 text-slate-50 duration-300 hover:bg-slate-500"
+        className="flex justify-center items-center w-8 h-8 rounded-full duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
       >
         <MdOutlineNavigateBefore className="text-3xl" />
       </Link>
@@ -27,7 +27,7 @@ export const ArrowButtonView = ({
       href={`/linhas?page=${currentPage + 1}${
         filter ? `&filter=${filter}` : ""
       }`}
-      className="flex justify-center items-center w-8 h-8 rounded-full bg-slate-400 text-slate-50 duration-300 hover:bg-slate-500"
+      className="flex justify-center items-center w-8 h-8 rounded-full duration-300 hover:bg-slate-200 dark:hover:bg-slate-700"
     >
       <MdOutlineNavigateNext className="text-3xl" />
     </Link>

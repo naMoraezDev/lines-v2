@@ -1,5 +1,5 @@
 import { Stops } from "@/ui/Stops";
-import { MainLayout } from "@/ui/MainLayout";
+import { MainLayout } from "@/ui/main-layout";
 import { StopsService } from "@/service/stops";
 
 const StopsPage = async () => {

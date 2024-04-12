@@ -1,5 +1,5 @@
 import { Home } from "@/features/home";
-import { MainLayout } from "@/ui/MainLayout";
+import { MainLayout } from "@/ui/main-layout";
 
 const HomePage = () => {
   return (

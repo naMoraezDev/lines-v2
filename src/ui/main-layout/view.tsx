@@ -5,7 +5,7 @@ export const MainLayoutView = ({ children, mobile }: MainLayoutProps) => {
   return (
     <main
       className="
-        bg-slate-100 text-slate-500 min-h-screen w-full transition-colors duration-500
+        bg-slate-100 text-slate-500 min-h-screen w-full duration-300
         dark:bg-slate-800 dark:text-slate-50
       "
     >

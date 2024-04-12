@@ -1,7 +1,7 @@
 import "./styles.css";
 import Image from "next/image";
 import { LineList } from "@/ui/LineList";
-import { MainLayout } from "@/ui/MainLayout";
+import { MainLayout } from "@/ui/main-layout";
 import { LinesService } from "@/service/lines";
 import { ItineraryService } from "@/service/itinerary";
 import noData from "../../../public/images/no-data.svg";

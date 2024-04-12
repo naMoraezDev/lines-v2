@@ -17,7 +17,7 @@ export const ToggleThemeButtonView = () => {
         <div
           className={`
             ${isDark ? "bg-green-500" : "bg-slate-300"}
-            appearance-none transition-colors w-14 h-7 rounded-full 
+            appearance-none duration-300 w-14 h-7 rounded-full 
           `}
         />
         <span
