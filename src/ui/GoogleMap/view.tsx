@@ -21,9 +21,7 @@ const GoogleMapsView = ({
   setCenter,
   setResponse,
   destination,
-  userLocation,
   setStopDetails,
-  setStopLocation,
 }: GoogleMapProps) => {
   const {
     path,
@@ -43,9 +41,7 @@ const GoogleMapsView = ({
     setCenter,
     setResponse,
     destination,
-    userLocation,
     setStopDetails,
-    setStopLocation,
   });
 
   if (itinerary && isLoaded) {
@@ -130,14 +126,6 @@ const GoogleMapsView = ({
               </>
             )}
           </MarkerClusterer>
-          <Marker
-            title="Você está aqui"
-            position={userLocation}
-            icon={{
-              scaledSize: new window.google.maps.Size(40, 40),
-              url: "https://cdn-icons-png.flaticon.com/512/6378/6378110.png",
-            }}
-          />
           <DirectionsService
             callback={directionsCallback}
             options={directionsServiceOptions}

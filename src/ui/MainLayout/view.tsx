@@ -8,7 +8,7 @@ export const MainLayoutView = ({ children }: { children: React.ReactNode }) => {
         dark:bg-slate-800 dark:text-slate-50
       "
     >
-      <section className="max-w-[1270px] mx-auto">
+      <section className="max-w-[1270px] mx-auto pb-20">
         <Header />
         {children}
       </section>

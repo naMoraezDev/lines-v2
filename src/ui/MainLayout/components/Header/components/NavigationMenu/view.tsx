@@ -25,7 +25,15 @@ export const NavigationMenuView = () => {
       >
         Linhas
       </Link>
-      <Link href="/">Paradas</Link>
+      <Link
+        href="/pontos"
+        className={`
+          ${pathname === "/pontos" ? "border-green-400" : "border-none"}
+          menu-item pb-2 border-b-4 rounded-sm duration-300
+        `}
+      >
+        Pontos
+      </Link>
     </section>
   );
 };

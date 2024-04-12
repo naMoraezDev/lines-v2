@@ -21,7 +21,7 @@ export const PaginationView = ({
   });
 
   return (
-    <section className="flex gap-4 w-full justify-center items-center pb-24">
+    <section className="flex gap-4 w-full justify-center items-center">
       <span>{pageStart}</span> - <span>{pageEnd}</span> de{" "}
       <span>{lines.length}</span>
       {currentPage > 1 && (

@@ -1,5 +1,5 @@
 import { GoogleMapProps } from "./types";
-import { Line } from "@/service/lines/types";
+import { Line } from "@/service/stops/types";
 import React, { useEffect, useState } from "react";
 import { useJsApiLoader } from "@react-google-maps/api";
 
@@ -11,7 +11,6 @@ export const useGoogleMap = ({
   setResponse,
   destination,
   setStopDetails,
-  setStopLocation,
 }: GoogleMapProps) => {
   const [path, setPath] = useState<any>([]);
 
@@ -34,9 +33,8 @@ export const useGoogleMap = ({
   }, [itinerary]);
 
   const handleOnClick = (stopLines: Line[], location: any) => {
-    if (setStopDetails && setStopLocation) {
+    if (setStopDetails) {
       setStopDetails(stopLines);
-      setStopLocation(location);
       if (setCenter) {
         setCenter(location);
       }

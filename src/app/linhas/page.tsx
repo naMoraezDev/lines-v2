@@ -1,15 +1,11 @@
 import "./styles.css";
 import Image from "next/image";
-import { LineItem } from "@/ui/LineItem";
-import GoogleMap from "@/ui/GoogleMap/view";
+import { LineList } from "@/ui/LineList";
 import { MainLayout } from "@/ui/MainLayout";
-import { Pagination } from "@/ui/Pagination";
 import { LinesService } from "@/service/lines";
-import { FilterSelect } from "@/ui/FilterSelect";
 import { ItineraryService } from "@/service/itinerary";
 import noData from "../../../public/images/no-data.svg";
-import { ItineraryLocation, Line } from "@/service/itinerary/types";
-import { LineList } from "@/ui/LineList";
+import { ItineraryLocation } from "@/service/itinerary/types";
 
 const LinesPage = async ({
   searchParams,
@@ -32,11 +28,6 @@ const LinesPage = async ({
   const itineraryData = await ItineraryService.getItinerary("7");
 
   const itineraryLocations: ItineraryLocation[] = Object.values(itineraryData);
-
-  const itineraryDetails: Line = {
-    nome: itineraryData.nome,
-    codigo: itineraryData.codigo,
-  };
 
   const lines = filter
     ? filter === "onibus"

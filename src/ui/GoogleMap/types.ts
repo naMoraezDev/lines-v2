@@ -1,4 +1,4 @@
-import { Line } from "@/service/lines/types";
+import { Line } from "@/service/stops/types";
 import { Dispatch, SetStateAction } from "react";
 import { ItineraryLocation } from "@/service/itinerary/types";
 
@@ -13,10 +13,8 @@ interface Stops {
 export interface GoogleMapProps {
   center?: any;
   stops?: Stops[];
-  userLocation?: any;
   setCenter?: Dispatch<any>;
   itinerary?: ItineraryLocation[];
-  setStopLocation?: Dispatch<any>;
   origin?: google.maps.LatLngLiteral | null;
   destination?: google.maps.LatLngLiteral | null;
   setStopDetails?: Dispatch<SetStateAction<Line[]>>;
