@@ -2,17 +2,19 @@
 
 import { useSearchbox } from "./io";
 import { RiSearchLine } from "react-icons/ri";
+import { DefaultProps } from "@/types/default-props";
 
-export const SearchboxView = () => {
+export const SearchboxView = ({ mobile }: DefaultProps) => {
   const { search, handleSearch, handleSubmit } = useSearchbox();
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="
-        w-80 flex items-center bg-slate-200 py-2 px-4 rounded-full transition-colors duration-500
+      className={`
+        ${mobile ? "w-full" : "w-80"}
+         flex items-center bg-slate-200 py-2 px-4 rounded-full transition-colors duration-500
         dark:bg-slate-700
-      "
+      `}
     >
       <input
         type="text"

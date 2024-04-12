@@ -3,8 +3,8 @@ import { MainLayout } from "@/ui/MainLayout";
 
 const HomePage = () => {
   return (
-    <MainLayout>
-      <Home />
+    <MainLayout mobile>
+      <Home mobile />
     </MainLayout>
   );
 };
