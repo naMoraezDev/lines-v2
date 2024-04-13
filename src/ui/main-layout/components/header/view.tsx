@@ -1,9 +1,9 @@
 import { Menu } from "./components/menu";
-import { LinesLogo } from "@/ui/LinesLogo";
-import { Searchbox } from "./components/Searchbox";
+import { LinesLogo } from "@/ui/lines-logo";
+import { Searchbox } from "./components/searchbox";
 import { DefaultProps } from "@/types/default-props";
-import { ToggleThemeButton } from "@/ui/ToggleThemeButton";
-import { NavigationMenu } from "./components/NavigationMenu";
+import { ToggleThemeButton } from "@/ui/toggle-theme-button";
+import { NavigationMenu } from "./components/navigation-menu";
 
 export const HeaderView = ({ mobile }: DefaultProps) => {
   return (

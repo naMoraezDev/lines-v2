@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useLineList } from "./io";
-import { LineItem } from "../LineItem";
+import { LineItem } from "../line-item";
 import { LineListProps } from "./types";
-import { Pagination } from "../Pagination";
-import { GoogleMap } from "@/ui/GoogleMap";
-import { FilterSelect } from "../FilterSelect";
+import { Pagination } from "../pagination";
+import { GoogleMap } from "@/ui/google-map";
+import { FilterSelect } from "../filter-select";
 import mapHero from "../../../public/images/map-hero.svg";
 
 export const LineListView = ({

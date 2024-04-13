@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMenu } from "./io";
-import { LinesLogo } from "@/ui/LinesLogo";
+import { LinesLogo } from "@/ui/lines-logo";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import { DefaultProps } from "@/types/default-props";

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { StopsProps } from "./types";
-import { LineItem } from "../LineItem";
-import { GoogleMap } from "../GoogleMap";
+import { LineItem } from "../line-item";
+import { GoogleMap } from "../google-map";
 import { Line } from "@/service/stops/types";
 
 export const StopsView = ({ stops }: StopsProps) => {

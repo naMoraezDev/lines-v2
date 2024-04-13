@@ -1,4 +1,4 @@
-import { Stops } from "@/ui/Stops";
+import { Stops } from "@/ui/stops";
 import { MainLayout } from "@/ui/main-layout";
 import { StopsService } from "@/service/stops";
 

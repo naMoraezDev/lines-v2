@@ -1,6 +1,6 @@
 import "./styles.css";
 import Image from "next/image";
-import { LineList } from "@/ui/LineList";
+import { LineList } from "@/ui/line-list";
 import { MainLayout } from "@/ui/main-layout";
 import { LinesService } from "@/service/lines";
 import { ItineraryService } from "@/service/itinerary";

@@ -1,7 +1,7 @@
 import { usePagination } from "./io";
 import { PaginationProps } from "./types";
-import { ArrowButton } from "./components/ArrowButton";
-import { PaginationItem } from "./components/PaginationItem";
+import { ArrowButton } from "./components/arrow-button";
+import { PaginationItem } from "./components/pagination-item";
 
 export const PaginationView = ({
   lines,
