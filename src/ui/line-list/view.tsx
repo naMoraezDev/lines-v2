@@ -19,7 +19,7 @@ export const LineListView = ({
   const { loading, itinerary, currentLine, handleItinerary } = useLineList();
 
   return (
-    <section>
+    <section className="pb-10">
       <div className="w-full flex py-10 gap-6">
         <div className="w-1/2">
           <ul className="flex flex-col w-full items-center animate-fadeIn">
