@@ -3,7 +3,18 @@ import { useState } from "react";
 export const useMenu = () => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(!open);
+  const disableScroll = () => {
+    if (!open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  };
 
-  return { open, handleOpen };
+  const handleOpen = () => {
+    setOpen(!open);
+    disableScroll();
+  };
+
+  return { open, handleOpen, disableScroll };
 };

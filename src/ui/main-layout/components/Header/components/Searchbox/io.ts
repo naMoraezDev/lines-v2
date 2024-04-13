@@ -6,7 +6,7 @@ export const useSearchbox = () => {
   const searchParams = useSearchParams();
   const searchParam = searchParams.get("search");
 
-  const [search, setSearch] = useState(searchParam as string);
+  const [search, setSearch] = useState(searchParam ?? "");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
