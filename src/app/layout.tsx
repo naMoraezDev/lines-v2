@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@/contexts/theme";
 
@@ -22,10 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactElement;
 }>) {
+  const isOriginalyDark = cookies().get("app.isDark")?.value === "true";
+
   return (
     <html lang="pt-BR">
       <body className={`${roboto.variable} font-roboto overflow-x-hidden`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider {...{ isOriginalyDark }}>{children}</ThemeProvider>
       </body>
     </html>
   );

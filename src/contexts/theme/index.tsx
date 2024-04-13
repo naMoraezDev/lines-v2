@@ -1,7 +1,8 @@
 "use client";
 
+import { setCookie } from "nookies";
 import { ThemeContextType } from "./types";
-import React, { createContext, useLayoutEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const ThemeContext = createContext<ThemeContextType>({
   isDark: false,
@@ -10,18 +11,18 @@ export const ThemeContext = createContext<ThemeContextType>({
 
 export const ThemeProvider = ({
   children,
+  isOriginalyDark,
 }: {
+  isOriginalyDark: boolean;
   children: React.ReactElement;
 }) => {
-  const [isDark, setIsDark] = useState(false);
-
-  useLayoutEffect(() => {
-    const localStorageDarkThemeValue = localStorage.getItem("app.isDark");
-    setIsDark(localStorageDarkThemeValue === "true");
-  }, []);
+  const [isDark, setIsDark] = useState(isOriginalyDark);
 
   const toggleTheme = () => {
-    localStorage.setItem("app.isDark", !isDark ? "true" : "false");
+    setCookie(null, "app.isDark", !isDark ? "true" : "false", {
+      maxAge: 30 * 24 * 60 * 60,
+      path: "/",
+    });
     setIsDark(!isDark);
   };
 
