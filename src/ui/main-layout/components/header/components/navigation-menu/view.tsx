@@ -11,7 +11,7 @@ export const NavigationMenuView = () => {
         href="/"
         className={`
           ${pathname === "/" ? "border-green-400" : "border-none"}
-          menu-item pb-2 border-b-4 rounded-sm duration-300
+          menu-item pb-2 border-b-4 rounded-sm
         `}
       >
         Home
@@ -20,7 +20,7 @@ export const NavigationMenuView = () => {
         href="/linhas"
         className={`
           ${pathname === "/linhas" ? "border-green-400" : "border-none"}
-          menu-item pb-2 border-b-4 rounded-sm duration-300
+          menu-item pb-2 border-b-4 rounded-sm
         `}
       >
         Linhas
@@ -29,7 +29,7 @@ export const NavigationMenuView = () => {
         href="/pontos"
         className={`
           ${pathname === "/pontos" ? "border-green-400" : "border-none"}
-          menu-item pb-2 border-b-4 rounded-sm duration-300
+          menu-item pb-2 border-b-4 rounded-sm
         `}
       >
         Pontos

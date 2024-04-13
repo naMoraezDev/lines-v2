@@ -1,7 +1,6 @@
 import "./styles.css";
 import Image from "next/image";
 import { LineList } from "@/ui/line-list";
-import { MainLayout } from "@/ui/main-layout";
 import { LinesService } from "@/service/lines";
 import { ItineraryService } from "@/service/itinerary";
 import noData from "../../../public/images/no-data.svg";
@@ -44,7 +43,7 @@ const LinesPage = async ({
   const currentLines = lines.slice((page - 1) * 10, page * 10);
 
   return (
-    <MainLayout>
+    <>
       {lines.length > 0 ? (
         <LineList
           {...{ lines, filter, search, currentLines, itineraryLocations, page }}
@@ -58,7 +57,7 @@ const LinesPage = async ({
           </span>
         </section>
       )}
-    </MainLayout>
+    </>
   );
 };
 

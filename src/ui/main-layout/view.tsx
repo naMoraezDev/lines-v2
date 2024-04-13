@@ -1,7 +1,11 @@
+"use client";
 import { MainLayoutProps } from "./types";
 import { Header } from "./components/header";
+import { useSelectedLayoutSegments } from "next/navigation";
 
-export const MainLayoutView = ({ children, mobile }: MainLayoutProps) => {
+export const MainLayoutView = ({ children }: MainLayoutProps) => {
+  const mobile = useSelectedLayoutSegments()[0] === "mobile";
+
   return (
     <main
       className="
