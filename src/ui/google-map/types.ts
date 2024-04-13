@@ -12,6 +12,7 @@ interface Stops {
 
 export interface GoogleMapProps {
   center?: any;
+  zoom?: number;
   stops?: Stops[];
   setCenter?: Dispatch<any>;
   itinerary?: ItineraryLocation[];

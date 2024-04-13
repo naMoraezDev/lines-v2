@@ -18,6 +18,7 @@ const GoogleMapsView = ({
   origin,
   response,
   itinerary,
+  zoom = 12,
   setCenter,
   setResponse,
   destination,
@@ -52,7 +53,7 @@ const GoogleMapsView = ({
 
     return (
       <GoogleMap
-        zoom={11}
+        zoom={zoom}
         clickableIcons
         center={itineraryCenter}
         mapContainerStyle={containerStyle}
@@ -94,7 +95,7 @@ const GoogleMapsView = ({
     return (
       <>
         <GoogleMap
-          zoom={11}
+          zoom={zoom}
           clickableIcons
           center={center}
           mapContainerStyle={containerStyle}

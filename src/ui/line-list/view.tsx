@@ -42,6 +42,7 @@ export const LineListView = ({
           {Boolean(itinerary.length && !loading) && (
             <div className="animate-fadeIn flex flex-col gap-2">
               <span className="text-lg font-bold">
+                Linha{" "}
                 <span className="text-green-500">{currentLine?.codigo}</span> -{" "}
                 {currentLine?.nome}
               </span>

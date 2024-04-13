@@ -9,7 +9,7 @@ export const HeaderView = ({ mobile }: DefaultProps) => {
   return (
     <header
       className="
-        sticky top-0 w-full h-20 flex items-center gap-6 justify-between px-4 bg-slate-100 duration-300
+        sticky top-0 w-full h-20 flex items-center gap-6 justify-between px-4 bg-slate-100 duration-300 z-50
         dark:bg-slate-800
       "
     >
