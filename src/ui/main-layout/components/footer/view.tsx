@@ -5,18 +5,22 @@ export const FooterView = ({ mobile }: DefaultProps) => {
   return (
     <footer
       className="
-        h-16 flex items-center bg-slate-200 duration-300
+        flex items-center bg-slate-200 duration-300 py-3
         dark:bg-gray-900
       "
     >
       <div
         className={`
-          ${mobile ? "px-4 flex-row-reverse gap-4" : "justify-between"}
+          ${
+            mobile
+              ? "px-4 flex-col-reverse gap-4 justify-center"
+              : "justify-between"
+          }
           w-full max-w-[1270px] mx-auto flex items-center
         `}
       >
-        <p>© 2022 _Lines. Todos os direitos reservados.</p>
-        <LinesLogo />
+        <p>© 2022 _lines. Todos os direitos reservados.</p>
+        <LinesLogo {...{ mobile }} />
       </div>
     </footer>
   );

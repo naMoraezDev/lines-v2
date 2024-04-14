@@ -46,13 +46,13 @@ export const MenuView = ({ mobile }: DefaultProps) => {
             <AiOutlineClose className="w-full h-full" />
           </button>
         </div>
-        <Link href="/" className="text-xl">
+        <Link href="/" className="text-xl" onClick={handleOpen}>
           Home
         </Link>
-        <Link href="/linhas" className="text-xl">
+        <Link href="/linhas" className="text-xl" onClick={handleOpen}>
           Linhas
         </Link>
-        <Link href="/pontos" className="text-xl">
+        <Link href="/pontos" className="text-xl" onClick={handleOpen}>
           Pontos
         </Link>
       </aside>

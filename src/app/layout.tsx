@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Roboto } from "next/font/google";
-import { ThemeProvider } from "@/contexts/theme";
 import { MainLayout } from "@/ui/main-layout";
+import { ThemeProvider } from "@/contexts/theme";
 
 const roboto = Roboto({
   preload: true,
@@ -28,7 +28,7 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.variable} font-roboto overflow-x-hidden`}>
+      <body className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}>
         <ThemeProvider {...{ isOriginalyDark }}>
           <MainLayout>{children}</MainLayout>
         </ThemeProvider>

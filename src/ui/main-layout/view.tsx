@@ -10,7 +10,7 @@ export const MainLayoutView = ({ children }: MainLayoutProps) => {
   return (
     <main
       className="
-        bg-slate-100 text-slate-500 w-full duration-300
+        bg-slate-100 text-slate-500 duration-300
         dark:bg-slate-800 dark:text-slate-50
       "
     >

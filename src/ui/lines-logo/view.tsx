@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { IoIosBus } from "react-icons/io";
+import { DefaultProps } from "@/types/default-props";
 
-export const LinesLogoView = () => {
+export const LinesLogoView = ({ mobile }: DefaultProps) => {
   return (
     <section>
-      <Link href="/" className="lines-logo flex gap-1 items-end" title="_lines">
-        <span className="lines-text text-4xl font-bold text-green-500">
+      <Link href="/" className="flex gap-1 items-end" title="_lines">
+        <span
+          className={`
+            ${mobile ? "text-3xl" : "text-4xl"} 
+            lines-text font-bold text-green-500
+          `}
+        >
           _lines
         </span>
-        <IoIosBus className="bus-icon w-12 h-12" />
+        <IoIosBus className={mobile ? "w-9 h-9" : "w-10 h-10"} />
       </Link>
     </section>
   );

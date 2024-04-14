@@ -13,8 +13,10 @@ export const HeaderView = ({ mobile }: DefaultProps) => {
         dark:bg-slate-800
       "
     >
-      <Menu {...{ mobile }} />
-      {!mobile && <LinesLogo />}
+      <div className="flex gap-6 items-center">
+        <Menu {...{ mobile }} />
+        {!mobile && <LinesLogo />}
+      </div>
       {!mobile && <NavigationMenu />}
       <Searchbox {...{ mobile }} />
       <ToggleThemeButton />
