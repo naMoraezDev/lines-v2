@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LineItemProps } from "./types";
 import { TbMapSearch } from "react-icons/tb";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const LineItemView = ({
   line,
@@ -19,7 +20,7 @@ export const LineItemView = ({
       <span
         className={`
           ${mobile && "w-fit"}
-          flex justify-end items-center text-right
+          flex gap-3 justify-end items-center text-right
         `}
       >
         <button
@@ -34,8 +35,15 @@ export const LineItemView = ({
           {!mobile && <span>trajeto</span>}
           <TbMapSearch />
         </button>
+        {!mobile && (
+          <Link
+            title="vizualizar em página inteira"
+            href={`/linhas/${line.id}`}
+          >
+            <FaExternalLinkAlt />
+          </Link>
+        )}
       </span>
-
       {mobile && (
         <Link
           href={`/linhas/${line.id}`}

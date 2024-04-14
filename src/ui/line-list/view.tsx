@@ -9,6 +9,8 @@ import { Pagination } from "../pagination";
 import { GoogleMap } from "@/ui/google-map";
 import { FilterSelect } from "../filter-select";
 import mapHero from "../../../public/images/map-hero.svg";
+import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const LineListView = ({
   page,
@@ -63,7 +65,15 @@ export const LineListView = ({
                   Linha{" "}
                   <span className="text-green-500">{currentLine?.codigo}</span>{" "}
                   - {currentLine?.nome}
+                  <Link
+                    title="vizualizar em página inteira"
+                    href={`/linhas/${currentLine?.id}`}
+                    className="inline-flex ml-3 text-green-500"
+                  >
+                    <FaExternalLinkAlt />
+                  </Link>
                 </span>
+
                 <div className="rounded-xl overflow-hidden h-min">
                   <GoogleMap itinerary={itinerary} />
                 </div>

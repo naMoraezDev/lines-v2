@@ -6,7 +6,7 @@ const ItineraryPage = async ({ params }: { params: { id: string } }) => {
     params,
   });
 
-  return <Itinerary {...{ itineraryLocations, nome, codigo }} />;
+  return <Itinerary {...{ itineraryLocations, nome, codigo, mobile: true }} />;
 };
 
 export default ItineraryPage;

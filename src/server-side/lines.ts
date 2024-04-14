@@ -2,7 +2,7 @@ import { LinesService } from "@/service/lines";
 import { ItineraryService } from "@/service/itinerary";
 import { ItineraryLocation } from "@/service/itinerary/types";
 
-interface GetLinesServerSideProps {
+interface GetLinesStaticProps {
   searchParams?: {
     page?: string;
     search?: string;
@@ -10,9 +10,9 @@ interface GetLinesServerSideProps {
   };
 }
 
-export const getLinesServerSideProps = async ({
+export const getLinesStaticProps = async ({
   searchParams,
-}: GetLinesServerSideProps) => {
+}: GetLinesStaticProps) => {
   const filter = searchParams?.filter;
   const search = searchParams?.search;
   const page = Number(searchParams?.page) || 1;

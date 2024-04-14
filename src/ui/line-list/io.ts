@@ -13,6 +13,7 @@ export const useLineList = () => {
     setItinerary(Object.values(response));
     setCurrentLine({
       nome: response.nome,
+      id: response.idlinha,
       codigo: response.codigo,
     });
     setLoading(false);

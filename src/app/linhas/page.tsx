@@ -1,5 +1,5 @@
 import { Lines } from "@/features/lines";
-import { getLinesServerSideProps } from "@/server-side/lines";
+import { getLinesStaticProps } from "@/server-side/lines";
 
 const LinesPage = async ({
   searchParams,
@@ -11,7 +11,7 @@ const LinesPage = async ({
   };
 }) => {
   const { currentLines, filter, itineraryLocations, lines, search, page } =
-    await getLinesServerSideProps({ searchParams });
+    await getLinesStaticProps({ searchParams });
 
   return (
     <Lines
