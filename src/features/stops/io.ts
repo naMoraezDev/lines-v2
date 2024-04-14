@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StopsProps } from "./types";
 import { Line } from "@/service/stops/types";
 
 export const useStops = ({ stops }: StopsProps) => {
+  const [open, setOpen] = useState(false);
   const [center, setCenter] = useState<any>({
     lat: Number(stops && stops[0].latitude),
     lng: Number(stops && stops[0].longitude),
@@ -13,12 +14,24 @@ export const useStops = ({ stops }: StopsProps) => {
   const [stopDetails, setStopDetails] = useState<Line[]>([]);
   const [origin, setOrigin] = useState<google.maps.LatLngLiteral | null>(null);
 
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
+  useEffect(() => {
+    if (stopDetails.length > 0) {
+      setOpen(true);
+    }
+  }, [stopDetails]);
+
   return {
+    open,
     center,
     origin,
     response,
     setCenter,
     setOrigin,
+    handleOpen,
     stopDetails,
     destination,
     setResponse,

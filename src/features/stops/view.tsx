@@ -8,13 +8,15 @@ import { LineItem } from "../../ui/line-item";
 import { GoogleMap } from "../../ui/google-map";
 import busStop from "../../../public/images/bus-stop-blue.svg";
 
-export const StopsView = ({ stops }: StopsProps) => {
+export const StopsView = ({ stops, mobile }: StopsProps) => {
   const {
+    open,
     center,
     origin,
     response,
     setCenter,
     setOrigin,
+    handleOpen,
     setResponse,
     stopDetails,
     destination,
@@ -24,7 +26,12 @@ export const StopsView = ({ stops }: StopsProps) => {
 
   return (
     <section className="w-full flex gap-6 mt-10 mb-12">
-      <div className="w-1/2 rounded-xl overflow-hidden animate-fadeIn">
+      <div
+        className={`
+          ${mobile ? "w-full" : "w-1/2"}
+          rounded-xl overflow-hidden animate-fadeIn
+        `}
+      >
         <GoogleMap
           {...{
             stops,
@@ -40,7 +47,7 @@ export const StopsView = ({ stops }: StopsProps) => {
           }}
         />
       </div>
-      {Boolean(stopDetails.length) && (
+      {!mobile && Boolean(stopDetails.length) && (
         <div className="w-1/2 animate-fadeIn">
           <h2 className="text-xl font-bold mb-6 px-4">Linhas disponíveis</h2>
           <ul className="flex flex-col w-full items-center">
@@ -64,7 +71,7 @@ export const StopsView = ({ stops }: StopsProps) => {
           </ul>
         </div>
       )}
-      {!stopDetails.length && (
+      {!mobile && !stopDetails.length && (
         <div className="w-1/2 flex flex-col items-center animate-fadeIn">
           <Image width={400} height={400} src={busStop} alt="mapa" />
           <span className="text-xl text-center font-bold">
@@ -74,6 +81,43 @@ export const StopsView = ({ stops }: StopsProps) => {
             disponíveis.
           </span>
         </div>
+      )}
+      {mobile && (
+        <>
+          <div
+            className={`
+              ${open ? "translate-y-[10%]" : "translate-y-full"}
+              fixed bottom-0 left-0 w-full h-[80%] pt-10 flex flex-col bg-gray-900 duration-500 overflow-visible rounded-t-xl z-40
+            `}
+          >
+            <h2 className="text-xl font-bold mb-6 px-4">Linhas disponíveis</h2>
+            <ul className="flex flex-col w-full items-center">
+              <li className="grid grid-cols-[20%_50%_30%] w-full p-4 font-bold rounded-md">
+                <span>Código</span>
+                <span>Nome</span>
+                <span className="text-right">Detalhes</span>
+              </li>
+              {stopDetails.map((stop) => (
+                <LineItem
+                  stopsVariant
+                  key={stop.idLinha}
+                  line={{
+                    id: stop.idLinha,
+                    nome: stop.nomeLinha,
+                    codigo: stop.codigoLinha,
+                  }}
+                  handleItinerary={() => setStopDetails([])}
+                />
+              ))}
+            </ul>
+          </div>
+          {open && (
+            <div
+              onClick={handleOpen}
+              className="w-full h-full absolute top-0 left-0 z-50"
+            />
+          )}
+        </>
       )}
     </section>
   );
