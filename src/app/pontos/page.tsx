@@ -1,4 +1,4 @@
-import { Stops } from "@/ui/stops";
+import { Stops } from "@/features/stops";
 import { StopsService } from "@/service/stops";
 
 const StopsPage = async () => {

@@ -1,0 +1,7 @@
+li {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+li:nth-child(odd) {
+  background: transparent;
+}
