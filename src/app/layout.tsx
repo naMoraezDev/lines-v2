@@ -28,7 +28,15 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}>
+      <head>
+        <meta
+          content="upgrade-insecure-requests"
+          http-equiv="Content-Security-Policy"
+        />
+      </head>
+      <body
+        className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}
+      >
         <ThemeProvider {...{ isOriginalyDark }}>
           <MainLayout>{children}</MainLayout>
         </ThemeProvider>
