@@ -28,12 +28,6 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <head>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        />
-      </head>
       <body
         className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}
       >
