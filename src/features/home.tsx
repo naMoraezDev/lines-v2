@@ -15,7 +15,7 @@ export const Home = ({ mobile }: DefaultProps) => {
     >
       <div
         className={`
-          ${mobile ? "gap-14" : "gap-8"}
+          ${!mobile ? "gap-8 justify-center" : "items-center"}
           flex flex-col 
         `}
       >
@@ -29,6 +29,15 @@ export const Home = ({ mobile }: DefaultProps) => {
           de todas as <span className="text-green-500">linhas</span> de ônibus
           de Porto Alegre.
         </h1>
+        {mobile && (
+          <Image
+            priority
+            width={500}
+            height={500}
+            src={busStopIllustration}
+            alt="homem esperando em um ponto de ônibus"
+          />
+        )}
         <Link
           href="/linhas"
           className={`
@@ -40,13 +49,15 @@ export const Home = ({ mobile }: DefaultProps) => {
           Navegar
         </Link>
       </div>
-      <Image
-        priority
-        width={500}
-        height={500}
-        src={busStopIllustration}
-        alt="homem esperando em um ponto de ônibus"
-      />
+      {!mobile && (
+        <Image
+          priority
+          width={500}
+          height={500}
+          src={busStopIllustration}
+          alt="homem esperando em um ponto de ônibus"
+        />
+      )}
     </main>
   );
 };
