@@ -30,8 +30,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <meta
+          httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
-          http-equiv="Content-Security-Policy"
         />
       </head>
       <body
