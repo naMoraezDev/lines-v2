@@ -1,6 +1,7 @@
 import { Line } from "@/service/lines/types";
+import { DefaultProps } from "@/types/default-props";
 
-export interface LineListProps {
+export interface LineListProps extends DefaultProps {
   page: number;
   lines: Line[];
   search?: string;

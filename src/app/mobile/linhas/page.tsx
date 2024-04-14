@@ -15,7 +15,15 @@ const LinesPage = async ({
 
   return (
     <Lines
-      {...{ lines, filter, search, currentLines, itineraryLocations, page }}
+      {...{
+        page,
+        lines,
+        filter,
+        search,
+        mobile: true,
+        currentLines,
+        itineraryLocations,
+      }}
     />
   );
 };
