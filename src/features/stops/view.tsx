@@ -87,7 +87,8 @@ export const StopsView = ({ stops, mobile }: StopsProps) => {
           <div
             className={`
               ${open ? "translate-y-[10%]" : "translate-y-full"}
-              fixed bottom-0 left-0 w-full h-[80%] pt-10 flex flex-col bg-gray-900 duration-500 overflow-visible rounded-t-xl z-40
+              fixed bottom-0 left-0 w-full h-[80%] pt-10 flex flex-col duration-500 overflow-visible rounded-t-xl z-40 bg-slate-200
+              dark:bg-gray-900
             `}
           >
             <h2 className="text-xl font-bold mb-6 px-4">Linhas disponíveis</h2>
