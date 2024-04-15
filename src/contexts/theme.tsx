@@ -1,8 +1,12 @@
 "use client";
 
 import { setCookie } from "nookies";
-import { ThemeContextType } from "./types";
 import React, { createContext, useState } from "react";
+
+interface ThemeContextType {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
 
 export const ThemeContext = createContext<ThemeContextType>({
   isDark: false,

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Roboto } from "next/font/google";
 import { MainLayout } from "@/ui/main-layout";
+import { AuthProvider } from "@/contexts/auth";
 import { ThemeProvider } from "@/contexts/theme";
 
 const roboto = Roboto({
@@ -32,7 +33,9 @@ export default function RootLayout({
         className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}
       >
         <ThemeProvider {...{ isOriginalyDark }}>
-          <MainLayout>{children}</MainLayout>
+          <AuthProvider>
+            <MainLayout>{children}</MainLayout>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
