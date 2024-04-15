@@ -1,3 +1,5 @@
+"use client";
+
 import nookies from "nookies";
 import firebase from "firebase/compat/app";
 import { firebaseClient } from "@/service/firebase/firebase-client";
