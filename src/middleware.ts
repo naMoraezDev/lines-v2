@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse, userAgent } from "next/server";
 
-export async function middleware(request: NextRequest) {
+export const middleware = (request: NextRequest) => {
   const { device } = userAgent(request);
   const url = request.nextUrl.clone();
   const isMobile = device.type === "mobile";
@@ -9,6 +9,6 @@ export async function middleware(request: NextRequest) {
     url.pathname = `/mobile${request.nextUrl.pathname}`;
     return NextResponse.rewrite(url);
   }
-}
+};
 
 export const config = { matcher: "/((?!.*\\.).*)" };

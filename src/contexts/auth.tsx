@@ -1,13 +1,13 @@
 import nookies from "nookies";
 import firebase from "firebase/compat/app";
-import { createContext, useState, useEffect } from "react";
 import { firebaseClient } from "@/service/firebase/firebase-client";
+import { createContext, useState, useEffect, ReactElement } from "react";
 
 export const AuthContext = createContext<{ user: firebase.User | null }>({
   user: null,
 });
 
-export function AuthProvider({ children }: any) {
+export const AuthProvider = ({ children }: { children: ReactElement }) => {
   const [user, setUser] = useState<firebase.User | null>(null);
 
   useEffect(() => {
@@ -35,4 +35,4 @@ export function AuthProvider({ children }: any) {
   return (
     <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );
-}
+};
