@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import { MainLayout } from "@/ui/main-layout";
 import { AuthProvider } from "@/contexts/auth";
 import { ThemeProvider } from "@/contexts/theme";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   preload: true,
@@ -37,6 +38,7 @@ const RootLayout = ({
             <MainLayout>{children}</MainLayout>
           </AuthProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
