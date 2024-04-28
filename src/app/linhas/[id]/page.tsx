@@ -1,3 +1,4 @@
+import { MainLayout } from "@/ui/main-layout";
 import { Itinerary } from "@/features/itinerary";
 import { getItineraryStaticProps } from "@/server-side/itinerary";
 
@@ -6,7 +7,11 @@ const ItineraryPage = async ({ params }: { params: { id: string } }) => {
     params,
   });
 
-  return <Itinerary {...{ itineraryLocations, nome, codigo }} />;
+  return (
+    <MainLayout>
+      <Itinerary {...{ itineraryLocations, nome, codigo }} />
+    </MainLayout>
+  );
 };
 
 export default ItineraryPage;

@@ -3,13 +3,12 @@
 import { MainLayoutProps } from "./types";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { useSelectedLayoutSegments } from "next/navigation";
 
-export const MainLayoutView = ({ children }: MainLayoutProps) => {
-  const segments = useSelectedLayoutSegments();
-  const mobile =
-    segments.includes("mobile") || segments.includes("__DEFAULT__");
-
+export const MainLayoutView = ({
+  mobile,
+  children,
+  notFound,
+}: MainLayoutProps) => {
   return (
     <main
       className="
@@ -18,7 +17,7 @@ export const MainLayoutView = ({ children }: MainLayoutProps) => {
       "
     >
       <section>
-        <Header {...{ mobile }} />
+        <Header {...{ mobile, notFound }} />
         <div
           className={`
             ${mobile ? "min-h-screen" : "min-h-[calc(100vh-140px)]"}
@@ -27,7 +26,7 @@ export const MainLayoutView = ({ children }: MainLayoutProps) => {
         >
           {children}
         </div>
-        <Footer {...{ mobile }} />
+        <Footer {...{ mobile, notFound }} />
       </section>
     </main>
   );

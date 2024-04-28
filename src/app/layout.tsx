@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Roboto } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import { MainLayout } from "@/ui/main-layout";
 import { AuthProvider } from "@/contexts/auth";
 import { ThemeProvider } from "@/contexts/theme";
 import { Analytics } from "@vercel/analytics/react";
@@ -40,9 +39,7 @@ const RootLayout = ({
           color="rgb(34, 197, 94)"
         />
         <ThemeProvider {...{ isOriginalyDark }}>
-          <AuthProvider>
-            <MainLayout>{children}</MainLayout>
-          </AuthProvider>
+          <AuthProvider>{children}</AuthProvider>
         </ThemeProvider>
         <Analytics />
       </body>

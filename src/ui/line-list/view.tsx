@@ -1,6 +1,7 @@
 "use client";
 
 import "./styles.css";
+import Link from "next/link";
 import Image from "next/image";
 import { useLineList } from "./io";
 import { LineItem } from "../line-item";
@@ -8,9 +9,8 @@ import { LineListProps } from "./types";
 import { Pagination } from "../pagination";
 import { GoogleMap } from "@/ui/google-map";
 import { FilterSelect } from "../filter-select";
-import mapHero from "../../../public/images/map-hero.svg";
-import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import mapHero from "../../../public/images/map-hero.svg";
 
 export const LineListView = ({
   page,
