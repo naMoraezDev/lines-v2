@@ -1,11 +1,14 @@
 "use client";
+
 import { MainLayoutProps } from "./types";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { useSelectedLayoutSegments } from "next/navigation";
 
 export const MainLayoutView = ({ children }: MainLayoutProps) => {
-  const mobile = useSelectedLayoutSegments()[0] === "mobile";
+  const segments = useSelectedLayoutSegments();
+  const mobile =
+    segments.includes("mobile") || segments.includes("__DEFAULT__");
 
   return (
     <main
