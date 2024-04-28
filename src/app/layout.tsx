@@ -32,7 +32,7 @@ const RootLayout = ({
   return (
     <html lang="pt-BR">
       <body
-        className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}
+        className={`${roboto.variable} font-roboto antialiased overflow-x-hidden md:w-screen`}
       >
         <NextTopLoader color="rgb(34, 197, 94)" height={4} />
         <ThemeProvider {...{ isOriginalyDark }}>
