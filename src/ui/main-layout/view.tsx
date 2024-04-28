@@ -18,7 +18,7 @@ export const MainLayoutView = ({ children }: MainLayoutProps) => {
         <Header {...{ mobile }} />
         <div
           className={`
-            ${mobile ? "min-h-screen" : "min-h-[calc(100vh-144px)]"}
+            ${mobile ? "min-h-screen" : "min-h-[calc(100vh-140px)]"}
             max-w-[1270px] mx-auto px-4 
           `}
         >
