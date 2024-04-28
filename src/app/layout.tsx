@@ -34,7 +34,11 @@ const RootLayout = ({
       <body
         className={`${roboto.variable} font-roboto antialiased overflow-x-hidden md:w-screen`}
       >
-        <NextTopLoader color="rgb(34, 197, 94)" height={4} />
+        <NextTopLoader
+          height={4}
+          showSpinner={false}
+          color="rgb(34, 197, 94)"
+        />
         <ThemeProvider {...{ isOriginalyDark }}>
           <AuthProvider>
             <MainLayout>{children}</MainLayout>

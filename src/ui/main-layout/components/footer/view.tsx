@@ -19,7 +19,7 @@ export const FooterView = ({ mobile }: DefaultProps) => {
           w-full max-w-[1270px] mx-auto flex items-center
         `}
       >
-        <p>© 2022 _lines. Todos os direitos reservados.</p>
+        <p>© 2024 Lines. Todos os direitos reservados.</p>
         <LinesLogo {...{ mobile }} />
       </div>
     </footer>
