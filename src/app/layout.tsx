@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Roboto } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import { MainLayout } from "@/ui/main-layout";
 import { AuthProvider } from "@/contexts/auth";
 import { ThemeProvider } from "@/contexts/theme";
@@ -31,8 +32,13 @@ const RootLayout = ({
   return (
     <html lang="pt-BR">
       <body
-        className={`${roboto.variable} font-roboto overflow-x-hidden md:w-screen`}
+        className={`${roboto.variable} font-roboto antialiased overflow-x-hidden md:w-screen`}
       >
+        <NextTopLoader
+          height={4}
+          showSpinner={false}
+          color="rgb(34, 197, 94)"
+        />
         <ThemeProvider {...{ isOriginalyDark }}>
           <AuthProvider>
             <MainLayout>{children}</MainLayout>

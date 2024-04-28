@@ -7,6 +7,7 @@ import { StopsProps } from "./types";
 import { LineItem } from "../../ui/line-item";
 import { GoogleMap } from "../../ui/google-map";
 import busStop from "../../../public/images/bus-stop-blue.svg";
+import Sheet from "react-modal-sheet";
 
 export const StopsView = ({ stops, mobile }: StopsProps) => {
   const {
@@ -82,44 +83,42 @@ export const StopsView = ({ stops, mobile }: StopsProps) => {
           </span>
         </div>
       )}
-      {mobile && (
-        <>
-          <div
-            className={`
-              ${open ? "translate-y-[10%]" : "translate-y-full"}
-              fixed bottom-0 left-0 w-full h-[80%] pt-10 flex flex-col duration-500 overflow-visible rounded-t-xl z-40 bg-slate-200
-              dark:bg-gray-900
-            `}
-          >
-            <h2 className="text-xl font-bold mb-6 px-4">Linhas disponíveis</h2>
-            <ul className="flex flex-col w-full items-center">
-              <li className="grid grid-cols-[20%_50%_30%] w-full p-4 font-bold rounded-md">
-                <span>Código</span>
-                <span>Nome</span>
-                <span className="text-right">Detalhes</span>
-              </li>
-              {stopDetails.map((stop) => (
-                <LineItem
-                  stopsVariant
-                  key={stop.idLinha}
-                  line={{
-                    id: stop.idLinha,
-                    nome: stop.nomeLinha,
-                    codigo: stop.codigoLinha,
-                  }}
-                  handleItinerary={() => setStopDetails([])}
-                />
-              ))}
-            </ul>
-          </div>
-          {open && (
-            <div
-              onClick={handleOpen}
-              className="w-full h-full absolute top-0 left-0 z-50"
-            />
-          )}
-        </>
-      )}
+      <Sheet
+        snapPoints={[0.9]}
+        onClose={handleOpen}
+        isOpen={mobile && open ? true : false}
+      >
+        <Sheet.Container>
+          <Sheet.Header />
+          <Sheet.Content>
+            <div className="px-4">
+              <h2 className="text-xl font-bold mb-6 px-4">
+                Linhas disponíveis
+              </h2>
+              <ul className="flex flex-col w-full items-center">
+                <li className="grid grid-cols-[20%_50%_30%] w-full p-4 font-bold rounded-md">
+                  <span>Código</span>
+                  <span>Nome</span>
+                  <span className="text-right">Detalhes</span>
+                </li>
+                {stopDetails.map((stop) => (
+                  <LineItem
+                    stopsVariant
+                    key={stop.idLinha}
+                    line={{
+                      id: stop.idLinha,
+                      nome: stop.nomeLinha,
+                      codigo: stop.codigoLinha,
+                    }}
+                    handleItinerary={() => setStopDetails([])}
+                  />
+                ))}
+              </ul>
+            </div>
+          </Sheet.Content>
+        </Sheet.Container>
+        <Sheet.Backdrop />
+      </Sheet>
     </section>
   );
 };

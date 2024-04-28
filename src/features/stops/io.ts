@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { StopsProps } from "./types";
+import { useEffect, useState } from "react";
 import { Line } from "@/service/stops/types";
 
 export const useStops = ({ stops }: StopsProps) => {
@@ -23,6 +23,12 @@ export const useStops = ({ stops }: StopsProps) => {
       setOpen(true);
     }
   }, [stopDetails]);
+
+  useEffect(() => {
+    if (!open) {
+      setStopDetails([]);
+    }
+  }, [open]);
 
   return {
     open,
