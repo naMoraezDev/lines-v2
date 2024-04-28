@@ -1,11 +1,18 @@
+import { HeaderProps } from "./types";
 import { Menu } from "./components/menu";
 import { LinesLogo } from "@/ui/lines-logo";
 import { Searchbox } from "./components/searchbox";
-import { DefaultProps } from "@/types/default-props";
 import { ToggleThemeButton } from "@/ui/toggle-theme-button";
 import { NavigationMenu } from "./components/navigation-menu";
 
-export const HeaderView = ({ mobile }: DefaultProps) => {
+export const HeaderView = ({ mobile, notFound }: HeaderProps) => {
+  if (notFound)
+    return (
+      <header className="sticky top-0 w-full h-20 flex items-center justify-center px-4 bg-green-500 duration-300 z-50">
+        <LinesLogo {...{ notFound }} />
+      </header>
+    );
+
   return (
     <header
       className="

@@ -1,4 +1,5 @@
 import { Lines } from "@/features/lines";
+import { MainLayout } from "@/ui/main-layout";
 import { getLinesStaticProps } from "@/server-side/lines";
 
 const LinesPage = async ({
@@ -14,17 +15,19 @@ const LinesPage = async ({
     await getLinesStaticProps({ searchParams });
 
   return (
-    <Lines
-      {...{
-        page,
-        lines,
-        filter,
-        search,
-        mobile: true,
-        currentLines,
-        itineraryLocations,
-      }}
-    />
+    <MainLayout mobile>
+      <Lines
+        {...{
+          page,
+          lines,
+          filter,
+          search,
+          mobile: true,
+          currentLines,
+          itineraryLocations,
+        }}
+      />
+    </MainLayout>
   );
 };
 

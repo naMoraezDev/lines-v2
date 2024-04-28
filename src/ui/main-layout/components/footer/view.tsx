@@ -1,7 +1,19 @@
+import { FooterProps } from "./types";
 import { LinesLogo } from "@/ui/lines-logo";
-import { DefaultProps } from "@/types/default-props";
 
-export const FooterView = ({ mobile }: DefaultProps) => {
+export const FooterView = ({ mobile, notFound }: FooterProps) => {
+  if (notFound)
+    return (
+      <footer
+        className="
+          flex items-center justify-center bg-slate-200 duration-300 py-3
+          dark:bg-gray-900
+        "
+      >
+        <LinesLogo {...{ mobile }} />
+      </footer>
+    );
+
   return (
     <footer
       className="

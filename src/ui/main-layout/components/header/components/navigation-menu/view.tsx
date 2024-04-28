@@ -9,9 +9,9 @@ export const NavigationMenuView = () => {
   return (
     <section className="menu flex gap-12">
       <Link
-        href="/"
+        href="/home"
         className={`
-          ${pathname === "/" ? "border-green-400" : "border-none"}
+          ${pathname === "/home" ? "border-green-400" : "border-none"}
           menu-item pb-2 border-b-4 rounded-sm
         `}
       >

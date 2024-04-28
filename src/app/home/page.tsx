@@ -1,7 +1,12 @@
 import { Home } from "@/features/home";
+import { MainLayout } from "@/ui/main-layout";
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <MainLayout>
+      <Home />
+    </MainLayout>
+  );
 };
 
 export default HomePage;

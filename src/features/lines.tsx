@@ -38,8 +38,8 @@ export const Lines = ({
           }}
         />
       ) : (
-        <section className="w-full h-[80vh] flex flex-col justify-center items-center animate-fadeIn">
-          <Image width={400} height={400} src={noData} alt="sem resultados" />
+        <section className="w-full flex flex-col items-center animate-fadeIn pt-20">
+          <Image width={300} height={300} src={noData} alt="sem resultados" />
           <span className="text-2xl font-bold text-center">
             Oops! Nenhum resultado <br /> para{" "}
             <span className="text-green-500">&quot;{search}&quot;</span>.
